@@ -1,0 +1,128 @@
+* {
+    box-sizing: border-box; padding: 0; margin: 0;
+}
+
+@font-face {
+    font-family: 'YUniverse-B';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_yuniverse@1.0/YUniverse-B.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {background-color: rgb(247, 251, 255);}
+
+#container {
+    display: grid;
+    grid-template-rows: 100px 1fr;
+    min-height: 100vh;
+}
+
+#container > header {
+    background-color: rgb(101, 173, 255);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#container > header .welcome {
+    color: #fff;
+    padding: 0 20px;
+}
+
+.button button {
+    font-family: 'YUniverse-B';
+    border: none;
+    border-radius: 5px;
+    border-color: rgb(150, 213, 255);
+    color: #fff;
+    font-size: 13px;
+    padding: 5px 10px;
+    cursor: pointer;
+    box-shadow: 0 0 40px 40px rgb(150, 213, 255) inset, 0 0 0 0 rgb(150, 213, 255);
+    transition: all 150ms ease-in-out;
+}
+
+.button button:hover {
+    box-shadow: 0 0 10px 0 rgb(150, 213, 255) inset, 0 0 10px 4px rgb(150, 213, 255);
+}
+
+.page-title {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+
+.page-title h1 {
+    font-family: 'YUniverse-B';
+}
+
+.total {
+    font-family: 'YUniverse-B';
+    display: flex;
+    justify-content: center;
+}
+
+.table {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.a_title {
+    text-decoration: none;
+    color: #000;
+}
+
+.a_title:hover {
+    color: rgb(164, 214, 255);
+}
+
+.list-table tr th {
+    border-bottom: 2px solid rgb(101, 173, 255);
+}
+
+.list-table tr td {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.no_ {
+    text-align: center;
+    width: 50px;
+}
+
+.title_ {
+    width: 450px;
+    padding: 0 5px;
+}
+
+.nm_ {
+    text-align: center;
+    width: 75px;
+}
+
+
+.at_ {
+    text-align: center;
+    width: 100px;
+}
+
+
+.page {
+    display: flex;
+    justify-content: center;
+}
+
+.page a {
+    padding: 10px;
+    text-decoration: none;
+    color: #000;
+}
+
+.page .end, .start {
+    display: none;
+}
