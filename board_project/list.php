@@ -51,69 +51,67 @@
 <body>
     <?php include_once "header.php"; ?>
     <main>
-        <div class="container mw-1000 mt-3">
-            <div class="d-flex justify-content-center flex-column">
-                <div class="">
-                    <h1>List</h1>
-                </div>
-                <div class="">
-                    Total : <?=$num?>
-                </div>
-                <div class="">
-                    <table class="">
-                        <thead>
-                            <tr>
-                                <th class="">No.</th>
-                                <th class="">Title</th>
-                                <th class="">Editor</th>
-                                <th class="">Date.</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                        <?php 
-                            foreach($p_list as $item) { 
-                                $title = $item['title'];
-                                if(mb_strlen($item['title'], "utf-8")>20) {
-                                    $title = str_replace($item['title'], mb_substr($item['title'], 0, 20, "utf-8")."…", $item['title']);
-                                }
-                        ?>
-                            <tr>
-                                <td class=""><?=$cnt--?></td>
-                                <td class=""><a href="detail.php?i_board=<?=$item['i_board']?>&page=<?=$page?><?= ($search_txt === "" ? "" : "&search_txt=".$search_txt)?>" class="a_title"><?=str_replace($search_txt, "<mark>{$search_txt}</mark>", $title)?></a></td>
-                                <td class=""><?=$item["nm"]?></td>
-                                <td class=""><?=$item["create_at"]?></td>
-                            </tr>
-                            
-                        <?php } ?>
-                        </tbody>
-                    </table>
-                </div>
-                <div class="">
-                    <?php
-                        if($page > 1) {
-                            $pre = $page-1;
-                            echo "<a href='list.php?page=$pre". ($search_txt === '' ? '' : '&search_txt='.$search_txt) ."'>◀</a>"; 
-                        }
-                        for($print_page = $start_p; $print_page <= $end_p; $print_page++)
-                        {
-                            echo "<a href='list.php?page=${print_page}". ($search_txt === '' ? '' : '&search_txt='.$search_txt) ."'>${print_page}</a>";
-                        }
-                        
-                        if($page < $total_page) {
-                            $next = $page+1;
-                            echo "<a href='list.php?page=$next". ($search_txt === '' ? '' : '&search_txt='.$search_txt) ."'>▶</a>"; 
+        <div class="container text-center">
+            <div class="">
+                <h1>List</h1>
+            </div>
+            <div class="mb-3">
+                Total : <?=$num?>
+            </div>
+            <div class="d-flex justify-content-center">
+                <table class="table table-sm table-hover border-light mw-960">
+                    <thead class="table-primary">
+                        <tr>
+                            <th>No.</th>
+                            <th>Title</th>
+                            <th>Editor</th>
+                            <th>Date.</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    <?php 
+                        foreach($p_list as $item) { 
+                            $title = $item['title'];
+                            if(mb_strlen($item['title'], "utf-8")>20) {
+                                $title = str_replace($item['title'], mb_substr($item['title'], 0, 20, "utf-8")."…", $item['title']);
                             }
                     ?>
-                </div>
-                
-                <div class="">
-                    <form action="list.php" method="get">
-                        <div>
-                            <input type="search" name="search_txt" value="<?=$search_txt?>">
-                            <input type="submit" value="검색">
-                        </div>
-                    </form>
-                </div>
+                        <tr>
+                            <td><?=$cnt--?></td>
+                            <td><a href="detail.php?i_board=<?=$item['i_board']?>&page=<?=$page?><?= ($search_txt === "" ? "" : "&search_txt=".$search_txt)?>" class="text-dark hover-light"><?=str_replace($search_txt, "<mark>{$search_txt}</mark>", $title)?></a></td>
+                            <td><?=$item["nm"]?></td>
+                            <td><?=$item["create_at"]?></td>
+                        </tr>
+                        
+                    <?php } ?>
+                    </tbody>
+                </table>
+            </div>
+            <div class="m-3">
+                <?php
+                    if($page > 1) {
+                        $pre = $page-1;
+                        echo "<a href='list.php?page=$pre". ($search_txt === '' ? '' : '&search_txt='.$search_txt) ."' class='pe-2 text-dark hover-light'>◀</a>"; 
+                    }
+                    for($print_page = $start_p; $print_page <= $end_p; $print_page++)
+                    {
+                        echo "<a href='list.php?page=${print_page}". ($search_txt === '' ? '' : '&search_txt='.$search_txt) ."' class='pe-2 hover-light ".($page == $print_page ? 'pageSelected' : 'text-dark')."'>${print_page}</a>";
+                    }
+                    
+                    if($page < $total_page) {
+                        $next = $page+1;
+                        echo "<a href='list.php?page=$next". ($search_txt === '' ? '' : '&search_txt='.$search_txt) ."' class='text-dark hover-light'>▶</a>"; 
+                        }
+                ?>
+            </div>
+            
+            <div class="button d-inline-flex align-items-center">
+                <form action="list.php" method="get">
+                    <div class="d-flex">
+                        <input class="align-items-center inputOutline" type="search" name="search_txt" value="<?=$search_txt?>">
+                        <input type="submit" value="검색">
+                    </div>
+                </form>
             </div>
         </div>
     </main>

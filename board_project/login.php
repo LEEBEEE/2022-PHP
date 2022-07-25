@@ -4,40 +4,22 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>
-        .header {
-            display: flex;
-            justify-content: center;            
-        }
-        .form {
-            display: flex;
-            justify-content: center;
-        }
-        .btn {
-            display: flex;
-            justify-content: center;
-        }
-        .join {
-            display: flex;
-            justify-content: center;
-        }
-    </style>
     <?php include_once "head.php"; ?>
-    <title>Login</title>
+    <title>Sign in</title>
 </head>
 <body>
-    <div class="wrap">
-        <div class="header"><h1>LOGIN</h1></div>
-        <div class="container">
-            <div class="form">
-                <form action="login_pro.php" method="POST">
-                    <div class="id"><input type="text" name="uid" placeholder="ID"></div>
-                    <div class="pw"><input type="password" name="upw" placeholder="PASSWORD"></div>
-                    <div class="btn"><input type="submit" value="Login"></div>
+    <div class="container h-100">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="d-flex justify-content-center align-items-center flex-column">
+                <h1 class="m-0">Sign In</h1>
+                <form action="login_pro.php" method="POST" class="mw-200 p-2">
+                    <div id="formInput" class="row">
+                        <input type="text" class="inputOutline" name="uid" placeholder="ID">
+                        <input type="password" class="inputOutline" name="upw" placeholder="PASSWORD">
+                        <input type="submit" value="Sign In">
+                    </div>
                 </form>
-            </div>
-            <div class="join">
-                <a href="join.php" tabindex="-1"><button>JOIN</button></a>
+                <span class="join"><a href="join.php" tabindex="-1">Sign Up</a></span>
             </div>
         </div>
     </div>

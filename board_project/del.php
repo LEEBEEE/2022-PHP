@@ -1,6 +1,8 @@
 <?php
     include_once "db/db_board.php";
     $i_board = $_GET["i_board"];
+    $page = $_GET["page"];
+    $search_txt = $_GET["search_txt"];
 
     session_start();   
     if(isset($_SESSION["login_user"]))
@@ -17,6 +19,5 @@
     }
     else {
         echo "권한이 없습니다 <br>";
-        echo "<a href='detail.php?i_board=$i_board'>원래 글로 돌아가기</a>";
+        echo "<a href='detail.php?i_board=$i_board&page=$page" .($search_txt === '' ? '' : '&search_txt=$search_txt'). "'>원래 글로 돌아가기</a>";
     }
-    

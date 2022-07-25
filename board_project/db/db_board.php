@@ -154,7 +154,7 @@
         $conn = get_conn();
         $result = mysqli_query($conn, $sql);
         mysqli_close($conn);
-        return header("location: detail.php?i_board=$i_board");
+        return $result;
     }
 
     function search_board(&$param){

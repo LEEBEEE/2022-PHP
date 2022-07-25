@@ -1,6 +1,9 @@
 <?php
     include_once "db/db_board.php";
     $i_board = $_POST["i_board"];
+    $page = $_POST["page"];
+    $search_txt = $_POST["search_txt"];
+
     session_start();
     if(isset($_SESSION["login_user"]))
     {
@@ -13,6 +16,7 @@
             "ctnt" => $_POST["ctnt"]
         ];
         $result = upd_board($param);
+        header("location: detail.php?i_board=$i_board&page=$page".($search_txt === '' ? '' : '&search_txt=$search_txt'));
     }
     else {
         echo "권한이 없습니다 <br>";

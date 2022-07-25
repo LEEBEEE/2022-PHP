@@ -20,9 +20,6 @@
         exit;
     }
 
-    // echo "i_user :", $result['i_user'], "<br>";
-    // echo "pw :", $result['upw'], "<br>";
-    
     if($upw === $result['upw'])
     {
         session_start();
@@ -33,6 +30,4 @@
     {
         header("location: login.php");
     }
-
-    //echo empty($result);
 

@@ -1,0 +1,157 @@
+@font-face {
+    font-family: 'MICEMyungjo';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2206-01@1.0/MICEMyungjo.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+* {
+    font-family: 'MICEMyungjo';
+    box-sizing: border-box; padding: 0; margin: 0;
+}
+
+@font-face {
+    font-family: 'YUniverse-B';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_yuniverse@1.0/YUniverse-B.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+html, body { height: 100%; }
+h1 { font-family: 'YUniverse-B'; }
+
+body {background-color: rgb(247, 251, 255) !important;}
+
+body::-webkit-scrollbar {
+    display: none;
+}
+
+header {
+    background-color: #CFE2FF;
+    color: #5a5a5a;
+    margin-bottom: 3rem;
+}
+
+a { text-decoration: none !important;}
+
+.button button, .button input[type=submit], .button input[type=reset] {
+    margin: 0 3px;
+    font-family: 'YUniverse-B';
+    border: none;
+    border-radius: 5px;
+    border-color: rgb(143, 179, 233);
+    color: #fff;
+    font-size: 13px;
+    padding: 5px 10px;
+    cursor: pointer;
+    box-shadow: 0 0 40px 40px rgb(143, 179, 233) inset, 0 0 0 0 rgb(130, 164, 214);
+    transition: all 150ms ease-in-out;
+}
+
+.button button:hover, .button input[type=submit]:hover, .button input[type=reset]:hover {
+    box-shadow: 0 0 10px 0 rgb(143, 179, 233) inset, 0 0 10px 4px rgb(130, 164, 214);
+}
+
+.circular__img {
+    margin-left: 3px;
+    display: inline-flex; 
+    align-items: center; 
+    overflow: hidden; 
+    border-radius: 50%; 
+    border: 1px solid #ecf0f1;
+}
+.circle_img {width: 100%; height: 100%; object-fit: cover;}
+.circular__size40 {width: 40px; height: 40px;}
+.circular__size20 {width: 20px; height: 20px;}
+.size-1_25rem { font-size: 1.25rem; }
+.size50 { width: 50px; height: 50px; }
+
+.bold { font-weight: bold; }
+.pageSelected { color:#7095cc !important; font-weight: bold; }
+
+.mw-200 { max-width: 200px; }
+
+#formInput input {
+    margin-bottom: 0.5rem;
+}
+
+#formInput input[type=submit], #formInput input[type=reset] {
+    width: 70px;
+    margin: 0 auto !important;
+    font-family: 'YUniverse-B';
+    border: none;
+    border-radius: 5px;
+    border-color: rgb(143, 179, 233);
+    color: #fff;
+    font-size: 13px;
+    padding: 5px 10px;
+    cursor: pointer;
+    box-shadow: 0 0 40px 40px rgb(143, 179, 233) inset, 0 0 0 0 rgb(130, 164, 214);
+    transition: all 150ms ease-in-out;
+}
+
+#formInput textarea {
+    resize: none;
+    width: 100%;
+    height: 50px;
+    padding: 10px;
+    border-radius: 4px;
+    border: #CCC solid 1px;
+
+}
+
+.join {
+    font-size: 0.8rem;
+}
+
+.join > a {
+    color: #CCC;
+}
+.join > a:hover {
+    color: #7095cc;
+}
+
+.mw-960 {
+    max-width: 960px !important;
+}
+
+.smFont{
+    font-size: 0.9rem;
+    color: #5a5a5a;
+}
+
+.titlebox input {
+    width: 900px;
+    border: none;
+    border-bottom: 1px solid gray;
+    background-color: rgba(255, 255, 255, 0.4);
+    padding: 10px;
+    margin: 20px 0 5px 0;
+    height: 2.5em;
+}
+
+.ctntbox textarea {
+    display: flex;
+    width: 900px;
+    resize: none;
+    height: 75vh;
+    background-color: rgba(255, 255, 255, 0.4);
+    padding: 10px;
+    border: none;
+    border-top: 1px solid gray;
+}
+
+.titlebox input:focus, .ctntbox textarea:focus {
+    outline: none;
+}
+
+.inputOutline {
+    border-radius: 4px;
+    border: #CCC solid 1px;
+}
+
+.inputOutline:focus {
+    outline-offset: -2px;
+    outline: #CFE2FFCC solid;
+}
+

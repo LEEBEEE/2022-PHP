@@ -30,6 +30,7 @@
     $target_filenm = gen_uuid_v4() .$ext;
     $target_folder = PROFILE_PATH .$login_user["i_user"];
     if(!is_dir($target_folder)) {
+        // umask(0);
         mkdir($target_folder, 0777, true);
     }
     
