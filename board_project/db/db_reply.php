@@ -25,7 +25,7 @@
 
         $sql =
         "   SELECT A.idx, A.comment, A.create_at as create_at,
-                   B.i_board, C.nm
+                   B.i_board, C.nm, C.i_user, C.profile_img
             FROM t_reply as A
             INNER JOIN t_board as B
                 ON A.i_board = B.i_board

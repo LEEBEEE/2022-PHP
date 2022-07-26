@@ -7,6 +7,11 @@
             "i_board" => $i_board
         ];
         $item = sel_board($param);
+        $page = $_GET['page'];
+        $search_txt = "";
+        if(isset($_GET['search_txt'])){
+            $search_txt = $_GET['search_txt'];
+        }
     }
 ?>
 
@@ -25,6 +30,8 @@
         <form action="<?= $i_board !== "" ? "mod_pro.php" : "write_pro.php" ?>" method="POST">
             <?php if($i_board !== "") { ?>
                 <input type="hidden" name="i_board" value="<?=$i_board?>" readonly>
+                <input type="hidden" name="page" value="<?=$page?>" readonly>
+                <input type="hidden" name="search_txt" value="<?=$search_txt?>" readonly>
             <?php } ?>
             <div class="button d-flex justify-content-between">
                 <input type="reset" value="Reset" tabindex="4">

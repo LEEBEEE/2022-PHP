@@ -17,4 +17,4 @@
         $result = ins_reply($param);
     }
 
-    header("location: detail.php?i_board=$i_board&page=$page".($search_txt === '' ? '' : '&search_txt=$search_txt'));
+    header("location: detail.php?i_board=$i_board&page=$page".($search_txt === '' ? '' : '&search_txt='.$search_txt));

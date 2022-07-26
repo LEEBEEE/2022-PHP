@@ -39,7 +39,7 @@
         <?php
             if(isset($_SESSION["login_user"]) &&  $i_user === $item['i_user'])
             {
-               echo "<a href='edit.php?i_board=".$i_board."' tabindex='-1'><button>Modify</button></a> ";
+               echo "<a href='edit.php?i_board=".$i_board."&page=".$page."' tabindex='-1'><button>Modify</button></a> ";
                echo "<button onclick='isDel();'>Delete</button>";
             }
         ?>
@@ -72,10 +72,20 @@
                 <?php
                     foreach($reply as $ritem){
                 ?>
-                    <div class="mb-3 button">                       
+                    <div class="mb-3 button">
                         <div class="d-flex justify-content-between">
-                            <span class="bold"><?=$ritem['nm']?></span>
-                            <a href="re_del.php?idx=<?=$ritem['idx']?>"><button>삭제</button></a>
+                            <div class="d-flex align-items-center">
+                                <div class="circular__img circular__size25 me-2">
+                                    <?php
+                                        $rProfile = !empty($ritem['profile_img']) ? $ritem['i_user'].'/'.$ritem['profile_img'] : 'user.png';
+                                    ?>
+                                    <img class="circle_img" src="img/profile/<?=$rProfile?>" width="100">
+                                </div>                 
+                                <span class="bold"><?=$ritem['nm']?></span>
+                            </div>
+                            <?php if(isset($_SESSION["login_user"]) &&  $i_user === $ritem['i_user']) { ?>
+                                <a href="re_del.php?i_board=<?=$i_board?>&page=<?=$page?><?=($search_txt !== "" ? "&search_txt=".$search_txt : "")?>&idx=<?=$ritem['idx']?>&i_user=<?=$ritem['i_user']?>" tabindex="-1"><button>삭제</button></a>
+                            <?php } ?>
                         </div>
                         <div><?=$ritem['create_at']?></div>
                         <div><?=$ritem['comment']?></div>
@@ -94,10 +104,12 @@
                 <?=$nm?>
                 </div>
                 <form action="cmt_pro.php" method="POST" id="formInput">
+                    <input type="hidden" name="page" value="<?=$page?>" readonly>
+                    <input type="hidden" name="search_txt" value="<?=$search_txt?>" readonly>
                     <input type="hidden" name="i_board" value="<?=$i_board?>" readonly>
                     <input type="hidden" name="i_user" value="<?=$i_user?>" readonly>
                     <textarea name="cmt" placeholder="댓글을 입력하세요."></textarea>
-                    <input type="submit" value="작성하기">
+                    <div class="w-100 position-relative"><input type="submit" value="작성하기" class="position-absolute right-0"></div>
                 </form>
             <?php } ?>
         </div>

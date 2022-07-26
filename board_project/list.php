@@ -62,10 +62,10 @@
                 <table class="table table-sm table-hover border-light mw-960">
                     <thead class="table-primary">
                         <tr>
-                            <th>No.</th>
-                            <th>Title</th>
-                            <th>Editor</th>
-                            <th>Date.</th>
+                            <th class="col-1">No.</th>
+                            <th class="col-8">Title.</th>
+                            <th class="col-1">Editor.</th>
+                            <th class="col-2">Date.</th>
                         </tr>
                     </thead>
                     <tbody>

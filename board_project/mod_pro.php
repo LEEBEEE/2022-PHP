@@ -16,7 +16,7 @@
             "ctnt" => $_POST["ctnt"]
         ];
         $result = upd_board($param);
-        header("location: detail.php?i_board=$i_board&page=$page".($search_txt === '' ? '' : '&search_txt=$search_txt'));
+        header("location: detail.php?i_board=$i_board&page=$page".($search_txt === '' ? '' : '&search_txt='.$search_txt));
     }
     else {
         echo "권한이 없습니다 <br>";
